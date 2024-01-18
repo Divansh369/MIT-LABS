@@ -1,0 +1,27 @@
+the corrected values to be inserted are as follows:
+
+```
+INSERT into PRJ_DETAILS
+values ('P1', 'SPYDER', '10-JAN-20', '11-OCT-22', '21-OCT-22', 102, 2000000, 1990000);
+
+INSERT into PRJ_DETAILS
+values ('P2', 'APOLLO', '01-JAN-19', '10-JUL-21', '30-DEC-21', 108, 3000000, 3600000);
+
+INSERT into PRJ_DETAILS
+values ('P3', 'UNICORN', '03-NOV-21', '10-OCT-23', '11-OCT-23', 106, 7500000, 8000000);
+
+INSERT into PRJ_DETAILS
+values ('P4', 'ZEUS', '28-FEB-20', '09-JUN-21', '10-JAN-22', 110, 5500000, 5000000);
+
+INSERT into PRJ_DETAILS
+values ('P5', 'JUPITOR', '07-AUG-18', '04-FEB-20', '01-NOV-20', 110, 9000000, 9000000);
+
+INSERT into PRJ_DETAILS
+values ('P6', 'MARS', '21-FEB-22', '07-AUG-22', '30-AUG-22', 110, 3100000, 1830000);
+
+INSERT into PRJ_DETAILS
+values ('P8', 'XXX', '21-OCT-17', '11-DEC-22', '21-DEC-22', 106, 4300300, 3850000);
+
+INSERT into PRJ_DETAILS
+values ('P7', 'BGT', '15-JUN-21', '11-JAN-22', '11-JAN-22', 113, 3330303, 3460000);
+```
