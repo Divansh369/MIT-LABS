@@ -1,0 +1,6 @@
+put 'email_records', 'user1001', 'data:from', 'user1001@sample.com'
+put 'email_records', 'user1001', 'data:to', '{(user003@sample.com),(user004@sample.com),(user006@sample.com)}'
+put 'email_records', 'user1002', 'data:from', 'user1002@sample.com'
+put 'email_records', 'user1002', 'data:to', '{(user005@sample.com),(user006@sample.com)}'
+put 'email_records', 'user1003', 'data:from', 'user1003@sample.com'
+put 'email_records', 'user1003', 'data:to', '{(user001@sample.com),(user005@sample.com)}'

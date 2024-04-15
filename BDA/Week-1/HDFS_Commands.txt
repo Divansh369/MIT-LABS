@@ -1,0 +1,53 @@
+Q: How to create a directory in HDFS?  
+A: hdfs dfs -mkdir /user/hadoop/directoryname
+
+Q: How to create an empty file in HDFS?  
+A: hdfs dfs -touchz /user/hadoop/emptyfile
+
+Q: How to copy files/folders from local file system to HDFS?  
+A: hdfs dfs -copyFromLocal /localpath/filename /hdfs/destinationpath
+
+Q: How to print file contents in HDFS?  
+A: hdfs dfs -cat /hdfs/filepath/filename
+
+Q: How to copy files/folders from HDFS to local file system?  
+A: hdfs dfs -copyToLocal /hdfs/filepath /localpath
+
+Q: How to move a file from local to HDFS?  
+A: hdfs dfs -moveFromLocal /localpath/filename /hdfs/destinationpath
+
+Q: How to copy files within HDFS?  
+A: hdfs dfs -cp /hdfs/sourcepath/filename /hdfs/destinationpath/filename
+
+Q: How to move files within HDFS?  
+A: hdfs dfs -mv /hdfs/sourcepath/filename /hdfs/destinationpath/filename
+
+Q: How to check the size of each file in a directory in HDFS?  
+A: hdfs dfs -ls /hdfs/directorypath | awk '{print $5 " bytes \t" $8}'
+
+Q: How to check the total size of a directory/file in HDFS?  
+A: hdfs dfs -du -s /hdfs/directorypath
+
+Q: How to check the last modified time of a directory or path in HDFS?  
+A: hdfs dfs -stat "%y %n" /hdfs/filepath
+
+Q: How to change the replication factor of a file/directory in HDFS?  
+A: hdfs dfs -setrep -w 3 /hdfs/filepath
+
+Q: How to list the contents of a directory in HDFS?  
+A: hdfs dfs -ls /hdfs/directorypath
+
+Q: How to remove a file from HDFS?  
+A: hdfs dfs -rm /hdfs/filepath
+
+Q: How to change file permissions in HDFS?  
+A: hdfs dfs -chmod 755 /hdfs/filepath
+
+Q: How to change file ownership in HDFS?  
+A: hdfs dfs -chown user:group /hdfs/filepath
+
+Q: How to calculate the checksum of a file in HDFS?  
+A: hdfs dfs -checksum /hdfs/filepath
+
+Q: How to concatenate files in HDFS?  
+A: hdfs dfs -concat /hdfs/targetpath/targetfile /hdfs/sourcepath/sourcefile1 /

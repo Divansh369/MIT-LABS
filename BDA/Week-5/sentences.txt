@@ -1,0 +1,3 @@
+Spark is an awesome tool for big data processing.
+PySpark provides easy-to-use APIs for working with Spark.
+It simplifies the process of building scalable applications.
