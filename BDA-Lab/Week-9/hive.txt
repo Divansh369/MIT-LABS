@@ -1,0 +1,86 @@
+Q: Create database with the name Employee.
+A: 
+CREATE DATABASE IF NOT EXISTS Employee;
+
+Q: Display available databases.
+A:
+SHOW DATABASES;
+
+Q: Choose the Employee database and Create external and internal table into it.
+A:
+USE Employee;
+
+-- Create external table
+CREATE EXTERNAL TABLE IF NOT EXISTS employee_external (
+    employee_id INT,
+    birthday DATE,
+    first_name STRING,
+    family_name STRING,
+    gender STRING,
+    work_day DATE
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION '/home/divansh/hive';
+
+-- Create managed table
+CREATE TABLE IF NOT EXISTS employee_managed (
+    employee_id INT,
+    birthday DATE,
+    first_name STRING,
+    family_name STRING,
+    gender STRING,
+    work_day DATE
+);
+
+Q: Load the given data to both external and managed table.
+A:
+-- Load data into external table
+LOAD DATA INPATH '/emp.csv' INTO TABLE employee_external;
+
+-- Load data into managed table
+LOAD DATA INPATH '/emp.csv' INTO TABLE employee_managed;
+
+Q: Perform partitioning by considering gender as a partition key.
+A:
+-- For external table
+ALTER TABLE employee_external ADD PARTITION (gender='Male');
+ALTER TABLE employee_external ADD PARTITION (gender='Female');
+
+-- For managed table
+ALTER TABLE employee_managed ADD PARTITION (gender='Male');
+ALTER TABLE employee_managed ADD PARTITION (gender='Female');
+
+Q: Create the buckets with suitable size.
+A:
+-- For external table
+ALTER TABLE employee_external CLUSTERED BY (employee_id) INTO 10 BUCKETS;
+
+-- For managed table
+ALTER TABLE employee_managed CLUSTERED BY (employee_id) INTO 10 BUCKETS;
+
+Q: Find the oldest 10 employees from both male and female category.
+A:
+-- For external table
+SELECT * FROM employee_external WHERE gender = 'Male' ORDER BY birthday ASC LIMIT 10;
+SELECT * FROM employee_external WHERE gender = 'Female' ORDER BY birthday ASC LIMIT 10;
+
+-- For managed table
+SELECT * FROM employee_managed WHERE gender = 'Male' ORDER BY birthday ASC LIMIT 10;
+SELECT * FROM employee_managed WHERE gender = 'Female' ORDER BY birthday ASC LIMIT 10;
+
+Q: Find the oldest 10 employee by considering Employee table and compare the time taken to perform this operation between Question 7 and Question 8.
+A:
+-- For external table (already queried in Question 7)
+-- For managed table
+SELECT * FROM employee_managed ORDER BY birthday ASC LIMIT 10;
+
+-- Compare the time taken between Question 7 and Question 8 based on the execution time shown.
+
+Q: Perform drop and alter operation on internal table.
+A:
+-- Drop internal table
+DROP TABLE IF EXISTS employee_managed;
+
+-- Alter internal table
+ALTER TABLE employee_external RENAME TO employee_internal;

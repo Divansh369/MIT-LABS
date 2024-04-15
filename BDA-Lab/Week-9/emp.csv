@@ -1,0 +1,4 @@
+employee_id,birthday,first_name,family_name,gender,work_day
+1,1990-05-15,John,Doe,Male,Monday
+2,1988-11-20,Jane,Smith,Female,Wednesday
+3,1995-03-10,Michael,Johnson,Male,Friday
