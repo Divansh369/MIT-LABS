@@ -1,1 +1,0 @@
-:load task1.scala
